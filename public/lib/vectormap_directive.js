@@ -20,7 +20,7 @@ module.directive('vectormap', function () {
 
     function displayFormat(val) {
       var formats = {
-        number: '0[.]0a',
+        number: '0.000',
         bytes: '0[.]0b',
         currency: '$0[.]00a',
         percentage: '0%'
