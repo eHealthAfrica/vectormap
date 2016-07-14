@@ -1,0 +1,17 @@
+[
+  {
+    "name": "read_data",
+    "file_name": "./source/SLE_adm_shp/SLE_adm1.shp",
+    "projection": "mill"
+  },
+  {
+    "name": "write_data",
+    "format": "jqvmap",
+    "file_name": "./output/map.sierra_leone_1_mill.js",
+    "params": {
+      "code_field": "ID_1",
+      "name_field": "NAME_1",
+      "name": "sierra_leone_1_mill"
+    }
+  }
+]

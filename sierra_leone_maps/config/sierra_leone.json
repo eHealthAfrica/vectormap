@@ -1,0 +1,17 @@
+[
+  {
+    "name": "read_data",
+    "file_name": "./source/SLE_adm_shp/SLE_adm0.shp",
+    "projection": "mill"
+  },
+  {
+    "name": "write_data",
+    "format": "jqvmap",
+    "file_name": "./output/jquery.vmap.sierra_leone.js",
+    "params": {
+      "code_field": "ISO",
+      "name_field": "NAME_ENGLI",
+      "name": "sierra leone"
+    }
+  }
+]
