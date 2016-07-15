@@ -3,6 +3,10 @@ var _ = require('lodash');
 var module = require('ui/modules').get('vectormap');
 
 module.controller('VectormapController', function ($scope) {
+  $scope.addColorScaleItem = function () {
+    $scope.options.colors.push(null);
+  }
+
   $scope.$watch('esResponse', function (resp) {
     if (!resp || !resp.aggregations) {
       $scope.data = null;

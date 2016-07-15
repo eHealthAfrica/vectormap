@@ -17,9 +17,8 @@ function VectormapProvider(Private) {
     params: {
       defaults: {
         mapType: 'sierra_leone_2_mill',
-        minColor: '#A0E2E2',
-        maxColor: '#265656',
         zoomOnScroll: false,
+        colors: [{input: '#A0E2E2'}, {input:'#265656'}],
         tipNumberFormat: 'number'
       },
       editor: require('plugins/vectormap/vectormap_vis_params.html')

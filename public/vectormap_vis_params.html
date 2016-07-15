@@ -11,10 +11,29 @@
   <!-- Color Scale -->
   <div class="form-group">
     <h3>Map Color Scale</h3>
-    <label>Min Color: </label>
-    <input type="text" ng-model="vis.params.minColor"><br>
-    <label>Max Color: </label>
-    <input type="text" ng-model="vis.params.maxColor">
+
+    <div ng-repeat="color in vis.params.colors" class="ng-scope">
+      <div class="vis-editor-agg-header">
+        <label>
+          color {{$index}}
+        </label>
+
+        <div class="btn-group">
+          <button type="button" ng-click="vis.params.colors.splice($index, 1)" class="btn btn-danger btn-xs">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group-addon" ng-style="{'background-color' : color.input }"></div>
+        <input ng-model="color.input" type="text" class="form-control ng-pristine ng-valid ng-isolate-scope ng-touched" name="color{{$index}}">
+      </div>
+    </div>
+
+    <div ng-click="vis.params.colors.push({})" class="sidebar-item-button primary ng-isolate-scope">
+        Add Color
+    </div>
   </div>
 
   <!-- Tooltip Number Format Type -->
@@ -22,8 +41,6 @@
     <h3>Tooltip Number Format</h3>
     <select ng-model="vis.params.tipNumberFormat" class="form-control">
       <option value="number" selected="selected">number</option>
-      <option value="bytes">bytes</option>
-      <option value="currency">currency</option>
       <option value="percentage">percentage</option>
     </select>
   </div>

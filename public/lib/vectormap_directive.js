@@ -21,9 +21,7 @@ module.directive('vectormap', function () {
     function displayFormat(val) {
       var formats = {
         number: '0.000',
-        bytes: '0[.]0b',
-        currency: '$0[.]00a',
-        percentage: '0%'
+        percentage: '0.000%'
       }
 
       return formats[val] || formats.number;
@@ -46,6 +44,13 @@ module.directive('vectormap', function () {
       render();
     });
 
+    function colors() {
+      return _(scope.options.colors)
+              .map('input')
+              .compact()
+              .value()
+    }
+
     function render() {
       element.css({
         height: element.parent().height(),
@@ -66,7 +71,7 @@ module.directive('vectormap', function () {
           series: {
             regions: [{
               values: scope.data,
-              scale: [scope.options.minColor, scope.options.maxColor],
+              scale: colors(),
               normalizeFunction: 'polynomial'
             }]
           },
@@ -74,6 +79,9 @@ module.directive('vectormap', function () {
             if (!scope.data) { return; }
 
             var count = _.isUndefined(scope.data[code]) ? 0 : scope.data[code];
+            if (scope.options.tipNumberFormat == "percentage")
+              count = count / 100 // turn off library multiplying by 100
+                                  // see https://github.com/adamwdraper/Numeral-js/issues/329
             el.html(el.html() + ": " + numeral(count).format(displayFormat(scope.options.tipNumberFormat)));
           }
         });
