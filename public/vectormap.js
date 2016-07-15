@@ -16,7 +16,7 @@ function VectormapProvider(Private) {
     template: require('plugins/vectormap/vectormap.html'),
     params: {
       defaults: {
-        mapType: 'world_mill',
+        mapType: 'sierra_leone_2_mill',
         minColor: '#A0E2E2',
         maxColor: '#265656',
         zoomOnScroll: false,
