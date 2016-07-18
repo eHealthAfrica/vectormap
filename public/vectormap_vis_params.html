@@ -16,6 +16,7 @@
       <div class="vis-editor-agg-header">
         <i class="fa fa-circle" ng-style="{color: color.input}"> </i>
         <label>
+          {{ $index == vis.params.colors.length - 1 ? '>= ' : '' }}
           {{ ($index) * (vis.params.max - vis.params.min) / (vis.params.colors.length - 1)  | number:0 }} %
         </label>
 
