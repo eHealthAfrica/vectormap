@@ -1,3 +1,8 @@
 <div ng-controller="VectormapController" class="jvectormap-vis">
   <vectormap data="data" options="vis.params"></vectormap>
+  <ul>
+    <li ng-repeat="color in vis.params.colors" class="ng-scope">
+      {{ color.input }}
+    </li>
+  </ul>
 </div>
