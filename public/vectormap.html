@@ -1,8 +1,18 @@
 <div ng-controller="VectormapController" class="jvectormap-vis">
   <vectormap data="data" options="vis.params"></vectormap>
-  <ul>
-    <li ng-repeat="color in vis.params.colors" class="ng-scope">
-      {{ color.input }}
-    </li>
-  </ul>
+  <div class="legend-col-wrapper ng-scope" ng-if="vis.params.colors.length">
+    <ul class="legend-ul">
+
+      <li ng-repeat="color in vis.params.colors" ng-mouseenter="highlight($event)" ng-mouseleave="unhighlight($event)" data-label="{{color.input}}" class="legend-value color ng-scope" style="opacity: 1;">
+
+        <div class="legend-value-container">
+          <div  ng-class="showDetails ? 'legend-value-full' : 'legend-value-truncate'" class="legend-value-title ng-binding legend-value-truncate">
+            <i class="fa fa-circle" ng-style="{color: color.input}"></i>
+            {{ ($index) * (vis.params.max - vis.params.min) / (vis.params.colors.length - 1)  | number:0 }} %
+          </div>
+        </div>
+
+      </li>
+    </ul>
+  </div>
 </div>

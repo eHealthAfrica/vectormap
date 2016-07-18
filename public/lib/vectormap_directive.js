@@ -72,7 +72,8 @@ module.directive('vectormap', function () {
             regions: [{
               values: scope.data,
               scale: colors(),
-              normalizeFunction: 'polynomial'
+              min: scope.options.min,
+              max: scope.options.max
             }]
           },
           onRegionTipShow: function(event, el, code) {

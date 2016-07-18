@@ -20,3 +20,11 @@ $ bin/kibana plugin -i vectormap -u https://github.com/eHealthAfrica/vectormap/a
 ### Sierra Leone Map
 
 Instructions to create [Sierra Leone Maps](./sierra_leone_maps/Readme.md)
+
+
+### Colors & Values
+
+We modified the code, adding a harcoded maximum (125) and minimum (0) value for the
+dataset. We also assume that the data are percentages
+
+In the options it is possible to add as many colors to the scale as needed
