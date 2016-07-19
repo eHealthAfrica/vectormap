@@ -27,4 +27,16 @@ Instructions to create [Sierra Leone Maps](./sierra_leone_maps/Readme.md)
 We modified the code, adding a harcoded maximum (125) and minimum (0) value for the
 dataset. We also assume that the data are percentages
 
-In the options it is possible to add as many colors to the scale as needed
+In the options it is possible to add as many colors to the scale as needed, and
+labels for them
+
+### Development
+
+assuming a kibana installation, you can develop and sync the changes with
+the kibana's installed plugins folder using the command:
+
+`gulp sync`
+
+on the kibana installation (`../kibana`) you can run
+
+`bin/kibana --dev`
