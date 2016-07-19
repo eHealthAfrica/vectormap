@@ -8,8 +8,7 @@
         <div class="legend-value-container">
           <div  ng-class="showDetails ? 'legend-value-full' : 'legend-value-truncate'" class="legend-value-title ng-binding legend-value-truncate">
             <i class="fa fa-circle" ng-style="{color: color.input}"></i>
-            {{ $index == vis.params.colors.length - 1 ? '>= ' : '' }}
-            {{ ($index) * (vis.params.max - vis.params.min) / (vis.params.colors.length - 1)  | number:0 }} %
+           {{ color.label }}
           </div>
         </div>
 
